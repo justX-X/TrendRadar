@@ -37,10 +37,8 @@ ai
 
 芯片
 光刻机
-
 半导体
 
-新能源
 光伏
 核能
 核聚变
@@ -48,39 +46,27 @@ ai
 储能
 电池
 
-微软
-Microsoft
-
-英伟达
-NVIDIA
-
-AMD
-
-谷歌
-google
-gemini
-deepmind
-
-chatgpt
-openai
-sora
-
-claude
-Anthropic
-
+新能源
 自动驾驶
 
 机器人
+
+商业航天
 
 十五五
 国产替代
 新质生产力
 
-中国
 技术
 突破
 
-商业航天
+英伟达
+NVIDIA
+谷歌
+google
+gemini
+chatgpt
+openai
 
 减持
 回购
