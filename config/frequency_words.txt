@@ -68,11 +68,12 @@ gemini
 chatgpt
 openai
 
-减持
 回购
 并购
 重组
 +公告
+
+投资避雷针
 
 监管
 处罚
