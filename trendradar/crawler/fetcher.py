@@ -10,6 +10,7 @@
 """
 
 import json
+import os
 import random
 import time
 from typing import Dict, List, Tuple, Optional, Union
@@ -20,8 +21,8 @@ import requests
 class DataFetcher:
     """数据获取器"""
 
-    # 默认 API 地址（本地部署）
-    DEFAULT_API_URL = "http://localhost:8080/api/s"
+    # 默认 API 地址（支持环境变量覆盖）
+    DEFAULT_API_URL = os.environ.get("NEWSNOW_API_URL", "http://localhost:8080/api/s")
 
     # 默认请求头
     DEFAULT_HEADERS = {
