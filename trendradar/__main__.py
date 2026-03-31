@@ -237,7 +237,9 @@ class NewsAnalyzer:
         self.update_info = None
         self.proxy_url = None
         self._setup_proxy()
-        self.data_fetcher = DataFetcher(self.proxy_url)
+        # 读取 NewsNow API URL 配置
+        newsnow_api_url = self.ctx.config["PLATFORMS"].get("API_URL", "")
+        self.data_fetcher = DataFetcher(self.proxy_url, newsnow_api_url if newsnow_api_url else None)
 
         # 初始化存储管理器（使用 AppContext）
         self._init_storage_manager()

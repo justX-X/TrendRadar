@@ -20,8 +20,8 @@ import requests
 class DataFetcher:
     """数据获取器"""
 
-    # 默认 API 地址
-    DEFAULT_API_URL = "https://newsnow.busiyi.world/api/s"
+    # 默认 API 地址（本地部署）
+    DEFAULT_API_URL = "http://localhost:8080/api/s"
 
     # 默认请求头
     DEFAULT_HEADERS = {
