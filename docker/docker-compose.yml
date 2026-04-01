@@ -14,7 +14,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
       # NewsNow API 配置
-      - NEWSNOW_API_URL=${NEWSNOW_API_URL:-http://localhost:8080/api/s}
+      - NEWSNOW_API_URL=${NEWSNOW_API_URL:-http://192.168.2.136:4444/api/s}
       # Web 服务器
       - ENABLE_WEBSERVER=${ENABLE_WEBSERVER:-false}
       - WEBSERVER_PORT=${WEBSERVER_PORT:-8080}
