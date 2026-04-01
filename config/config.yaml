@@ -68,7 +68,7 @@ platforms:
     - id: "benzinga"
       name: "Benzinga美股快讯"
 
-    - id: "reuters-business"
+    - id: "reuters"
       name: "Reuters全球财经"
 
     - id: "bloomberg"
@@ -111,8 +111,8 @@ platforms:
     - id: "spaceflight-spacex"
       name: "Spaceflight News SpaceX"
 
-    - id: "wired"
-      name: "Wired科技前沿"
+
+
 
 
 # ===============================================================
