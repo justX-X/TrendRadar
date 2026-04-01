@@ -13,6 +13,9 @@ services:
       - ../config:/app/config:ro
       - ../output:/app/output
 
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
     environment:
       - TZ=Asia/Shanghai
       # NewsNow API 配置
