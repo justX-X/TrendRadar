@@ -435,6 +435,7 @@ ai:
   
   model: "ollama/deepseek-r1:7b"
 
+
   api_key: "ollama"                       # API Key（建议使用环境变量 AI_API_KEY）
   
   api_base: "http://172.17.0.1:11434"                      # 自定义 API 端点（可选，大多数情况留空）
