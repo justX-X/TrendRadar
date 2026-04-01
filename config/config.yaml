@@ -71,13 +71,13 @@ platforms:
     - id: "reuters-business"
       name: "Reuters全球财经"
 
-    - id: "hackernews-hot"
-      name: "Hacker News热门"
+    - id: "bloomberg"
+      name: "Bloomberg 财经综合"
 
 
 # 补充
-    - id: "mktnews-flash"
-      name: "MKTNews快讯"
+    - id: "hackernews-hot"
+      name: "Hacker News热门"
     
     - id: "arstechnica"
       name: "Ars Technica半导体"
@@ -85,7 +85,6 @@ platforms:
     - id: "techmeme"
       name: "Techmeme科技聚合"
 
-    
     - id: "venturebeat"
       name: "VentureBeat创投科技"
     
@@ -94,16 +93,26 @@ platforms:
 
 
 
-#没啥用
+
     - id: "seeking-alpha"
       name: "Seeking Alpha美股分析"
+
+    - id: "cls-depth"
+      name: "财联社 深度"
+
+    - id: "wallstreetcn-news"
+      name: "华尔街见闻 最新"
+
+
+#没啥用
+    - id: "mktnews-flash"
+      name: "MKTNews快讯"
 
     - id: "spaceflight-spacex"
       name: "Spaceflight News SpaceX"
 
     - id: "wired"
       name: "Wired科技前沿"
-
 
 
 # ===============================================================
