@@ -6,7 +6,8 @@ services:
     container_name: trendradar
     restart: unless-stopped
 
-    network_mode: "host"
+    ports:
+      - "127.0.0.1:${WEBSERVER_PORT:-8080}:${WEBSERVER_PORT:-8080}"
 
     extra_hosts:
       - "host.docker.internal:host-gateway"

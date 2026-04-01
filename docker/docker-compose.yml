@@ -1,6 +1,6 @@
 services:
   trendradar:
-    image: wantcat/trendradar:latest
+    image: trendradar:latest
     container_name: trendradar
     restart: unless-stopped
 
