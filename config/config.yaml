@@ -451,12 +451,12 @@ ai:
                                     #    (原理：前缀 openai/ 强制 LiteLLM 使用 OpenAI 协议格式进行通信)
 
 
-  timeout: 180                      # 请求超时（秒）
+  timeout: 300                      # 请求超时（秒）
 
   temperature: 1.0                  # 采样温度 (0.0-2.0)
                                     # 注意：部分模型(如 gpt-5)可能要求必须为 1.0，否则会报错
   
-  max_tokens: 1024                  # 最大生成 token 数
+  max_tokens: 5000                  # 最大生成 token 数
                                     # 注意：如果 API 不支持此参数(报 HTTP 400)，请设为 0 以禁用发送
   stream: false                     # 关闭流式输出，提速30%+
   verify_ssl: false                 # 强制关闭litellm的SSL校验，根治ssl:default报错
