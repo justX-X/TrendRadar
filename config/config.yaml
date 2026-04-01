@@ -65,6 +65,8 @@ platforms:
     - id: "wallstreetcn-quick"
       name: "华尔街见闻快讯"
 
+
+# 美股
     - id: "benzinga"
       name: "Benzinga美股快讯"
 
@@ -74,29 +76,18 @@ platforms:
     - id: "bloomberg"
       name: "Bloomberg 财经综合"
 
+    - id: "seeking-alpha"
+      name: "Seeking Alpha美股分析"
 
-# 补充
-    - id: "hackernews-hot"
-      name: "Hacker News热门"
-    
+
+# 产业
     - id: "arstechnica"
       name: "Ars Technica半导体"
     
     - id: "techmeme"
       name: "Techmeme科技聚合"
 
-    - id: "venturebeat"
-      name: "VentureBeat创投科技"
-    
-    - id: "blockbeats-flash"
-      name: "律动BlockBeats快讯"
-
-
-
-
-    - id: "seeking-alpha"
-      name: "Seeking Alpha美股分析"
-
+# 深度
     - id: "cls-depth"
       name: "财联社 深度"
 
@@ -105,11 +96,20 @@ platforms:
 
 
 #没啥用
-    - id: "mktnews-flash"
-      name: "MKTNews快讯"
+    # - id: "mktnews-flash"
+    #   name: "MKTNews快讯"
 
-    - id: "spaceflight-spacex"
-      name: "Spaceflight News SpaceX"
+    # - id: "spaceflight-spacex"
+    #   name: "Spaceflight News SpaceX"
+    
+    # - id: "venturebeat"
+    #   name: "VentureBeat创投科技"
+    
+    # - id: "blockbeats-flash"
+    #   name: "律动BlockBeats快讯"
+
+    # - id: "hackernews-hot"
+    #   name: "Hacker News热门"
 
 # ===============================================================
 # 3. 数据源 - RSS 订阅
