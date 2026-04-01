@@ -435,9 +435,9 @@ ai:
   
   model: "ollama/qwen2.5:7b-instruct-q4_K_M"
 
-  api_key: "dummy"                       # API Key（建议使用环境变量 AI_API_KEY）
+  api_key: "ollama"                       # API Key（建议使用环境变量 AI_API_KEY）
   
-  api_base: "http://host.docker.internal:11434"                      # 自定义 API 端点（可选，大多数情况留空）
+  api_base: "http://172.17.0.1:11434/v1"                      # 自定义 API 端点（可选，大多数情况留空）
                                     # 示例: https://api.openai.com/v1（自建代理或兼容接口）
                                     #
                                     # 💡 超级重要：连接任意兼容 OpenAI 协议的模型商
@@ -458,6 +458,8 @@ ai:
   
   max_tokens: 1024                  # 最大生成 token 数
                                     # 注意：如果 API 不支持此参数(报 HTTP 400)，请设为 0 以禁用发送
+  stream: false                     # 关闭流式输出，提速30%+
+  verify_ssl: false                 # 强制关闭litellm的SSL校验，根治ssl:default报错
   # 高级选项
   num_retries: 1                    # 失败重试次数
   fallback_models: []               # 备用模型列表（可选）
