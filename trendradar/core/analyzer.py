@@ -729,9 +729,10 @@ def convert_keyword_stats_to_platform_stats(
     platform_map: Dict[str, List[Dict]] = {}
 
     for stat in keyword_stats:
-        keyword = stat["word"]
-        for title_data in stat["titles"]:
-            source_name = title_data["source_name"]
+        keyword = stat.get("word", "")
+        titles = stat.get("titles") or []
+        for title_data in titles:
+            source_name = title_data.get("source_name", "")
 
             if source_name not in platform_map:
                 platform_map[source_name] = []
