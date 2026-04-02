@@ -102,11 +102,13 @@ def prepare_report_data(
 
     processed_stats = []
     for stat in stats:
-        if stat["count"] <= 0:
+        if stat.get("count", 0) <= 0:
             continue
 
         processed_titles = []
-        for title_data in stat["titles"]:
+        # 安全获取 titles，防止 None 值
+        titles_list = stat.get("titles") or []
+        for title_data in titles_list:
             processed_title = {
                 "title": title_data["title"],
                 "source_name": title_data["source_name"],

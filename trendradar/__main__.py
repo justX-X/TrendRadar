@@ -826,7 +826,11 @@ class NewsAnalyzer:
                     ai_filter_result, mode=mode,
                     new_titles=new_titles, rss_new_urls=rss_new_urls,
                 )
-                total_titles = sum(len(titles) for titles in data_source.values())
+                # 安全计算 total_titles，防止 data_source 中有 None 值
+                total_titles = sum(
+                    len(titles) for titles in (data_source.values() or [])
+                    if titles is not None
+                )
 
                 # AI 筛选的 RSS 结果替换关键词匹配的 RSS 结果
                 if ai_rss_stats:
