@@ -1280,7 +1280,10 @@ def render_html_content(
     html += f"{total_titles} 条"
 
     # 计算筛选后的热点新闻数量
-    hot_news_count = sum(len(stat["titles"]) for stat in report_data["stats"])
+    # 安全获取 titles，防止 None 值
+    hot_news_count = sum(
+        len(stat.get("titles") or []) for stat in (report_data.get("stats") or [])
+    )
 
     html += """</span>
                     </div>
@@ -1328,19 +1331,21 @@ def render_html_content(
     # 生成热点词汇统计部分的HTML
     stats_html = ""
     tab_bar_html = ""
-    if report_data["stats"]:
-        total_count = len(report_data["stats"])
+    # 安全获取 stats，防止 None 值
+    report_stats = report_data.get("stats") or []
+    if report_stats:
+        total_count = len(report_stats)
 
         # 生成 Tab 栏 HTML
         tab_bar_html = '<div class="tab-bar">'
-        for tab_i, tab_stat in enumerate(report_data["stats"]):
+        for tab_i, tab_stat in enumerate(report_stats):
             escaped_tab_word = html_escape(tab_stat["word"])
             tab_count = tab_stat["count"]
             tab_bar_html += f'<button class="tab-btn" data-tab-index="{tab_i}">{escaped_tab_word}<span class="tab-count">{tab_count}</span></button>'
         tab_bar_html += '<button class="tab-btn" data-tab-index="all">全部</button>'
         tab_bar_html += '</div>'
 
-        for i, stat in enumerate(report_data["stats"], 1):
+        for i, stat in enumerate(report_stats, 1):
             count = stat["count"]
 
             # 确定热度等级
@@ -1364,7 +1369,9 @@ def render_html_content(
                     </div>"""
 
             # 处理每个词组下的新闻标题，给每条新闻标上序号
-            for j, title_data in enumerate(stat["titles"], 1):
+            # 安全获取 titles，防止 None 值
+            stat_titles = stat.get("titles") or []
+            for j, title_data in enumerate(stat_titles, 1):
                 is_new = title_data.get("is_new", False)
                 new_class = "new" if is_new else ""
 
@@ -1454,22 +1461,27 @@ def render_html_content(
 
     # 生成新增新闻区域的HTML
     new_titles_html = ""
-    if show_new_section and report_data["new_titles"]:
+    # 安全获取 new_titles，防止 None 值
+    new_titles = report_data.get("new_titles") or []
+    if show_new_section and new_titles:
+        total_new_count = report_data.get("total_new_count", 0)
         new_titles_html += f"""
                 <div class="new-section">
-                    <div class="new-section-title">本次新增热点 (共 {report_data['total_new_count']} 条)</div>
+                    <div class="new-section-title">本次新增热点 (共 {total_new_count} 条)</div>
                     <div class="new-sources-grid">"""
 
-        for source_data in report_data["new_titles"]:
-            escaped_source = html_escape(source_data["source_name"])
-            titles_count = len(source_data["titles"])
+        for source_data in new_titles:
+            escaped_source = html_escape(source_data.get("source_name", ""))
+            # 安全获取 titles，防止 None 值
+            source_titles = source_data.get("titles") or []
+            titles_count = len(source_titles)
 
             new_titles_html += f"""
                     <div class="new-source-group">
                         <div class="new-source-title">{escaped_source} · {titles_count}条</div>"""
 
             # 为新增新闻也添加序号
-            for idx, title_data in enumerate(source_data["titles"], 1):
+            for idx, title_data in enumerate(source_titles, 1):
                 ranks = title_data.get("ranks", [])
 
                 # 处理新增新闻的排名显示
